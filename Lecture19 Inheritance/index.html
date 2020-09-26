@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ControllerAsApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-repeat</title>
+    <script src='angular.min.js'></script>
+    <script src='script.js'></script>
+
+</head>
+<body>
+    <h1>Controller Inheritance</h1>
+<div ng-controller='ParentController1'>
+    <div ng-controller = 'ChildController1'>
+    </div>
+    <div ng-controller = 'ParentController2 as parent'>
+        Parent Value : {{parent.value}}
+        <div ng-controller = 'ChildController2 as child'>
+        Child Value : {{child.value}}<br>
+        Parent Value : {{parent.value}}<br>
+        </div>
+    </div>
+</div>    
+</body>
+</html>

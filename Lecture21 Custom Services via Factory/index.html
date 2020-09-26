@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'ShoppingListApp'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = 'angular.min.js'></script>
+    <script src = 'script.js'></script>
+    <title>Building Custom Services via Factory</title>
+</head>
+<body>
+    <h1>Building Custom Services via Factory</h1>
+    <div ng-controller = 'ShoppingListController1 as list1'>
+        <h3>Shopping List 1 with Unlimited Items in List</h3>
+        <input type="text" ng-model = 'list1.itemName' placeholder="Item Name">
+        <input type="text" ng-model = 'list1.itemQty' placeholder="Item Quantity">
+        <button ng-click = 'list1.addItem();'>Add Item</button>
+        <ol>
+            <li ng-repeat = 'item in list1.items'>
+                {{item.quantity}} of {{item.name}}
+                <button ng-click = 'list1.removeItems($index);'>Remove Item</button>
+            </li>
+        </ol>
+    </div>
+
+    <div ng-controller = 'ShoppingListController2 as list2'>
+        <h3>Shopping List 2 with only 3 Items in List</h3>
+        <input type="text" ng-model = 'list2.itemName' placeholder="Item Name">
+        <input type="text" ng-model = 'list2.itemQty' placeholder="Item Quantity">
+        <button ng-click = 'list2.addItem();'>Add Item</button>
+        <ol>
+            <li ng-repeat = 'item in list2.items'>
+                {{item.quantity}} of {{item.name}}
+                <button ng-click = 'list2.removeItems($index);'>Remove Item</button>
+            </li>
+        </ol>
+        Error : {{list2.errorMessage}}
+    </div>
+</body>
+</html>
